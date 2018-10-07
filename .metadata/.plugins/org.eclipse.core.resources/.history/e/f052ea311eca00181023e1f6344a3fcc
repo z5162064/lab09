@@ -1,0 +1,8 @@
+package refactoring.solution5;
+
+public class BasicDiscount implements Discounts {
+	@Override
+	public double applyDiscount() {
+		return 0;
+	}
+}

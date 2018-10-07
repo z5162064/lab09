@@ -1,0 +1,12 @@
+package refactoring.solution5;
+
+public class ClassicGetChargeStrategy implements GetChargeStrategy{
+
+	public double GetCharge(int number_of_days) {
+		double thisAmount = 0;
+		if (number_of_days > 5)
+			thisAmount = (number_of_days - 5);
+		return thisAmount;
+	}
+
+}

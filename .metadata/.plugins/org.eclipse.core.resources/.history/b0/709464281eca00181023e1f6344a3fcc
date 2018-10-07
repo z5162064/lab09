@@ -1,0 +1,6 @@
+package refactoring.solution5;
+
+public interface Discounts {
+	
+	public double applyDiscount();
+}

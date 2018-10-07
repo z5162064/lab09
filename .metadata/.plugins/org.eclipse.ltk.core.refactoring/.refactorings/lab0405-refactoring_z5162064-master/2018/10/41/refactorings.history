@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;TestMain.java&apos; to &apos;FXLabby/src/solution&apos;&#x0A;- Original project: &apos;lab0405-refactoring_z5162064-master&apos;&#x0A;- Destination element: &apos;FXLabby/src/solution&apos;&#x0A;- Original element: &apos;refactoring.solution5.TestMain.java&apos;" description="Copy compilation unit" destination="=FXLabby/src&lt;solution" element1="/src&lt;refactoring.solution5{TestMain.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1538906442642" units="1" version="1.0"/>
+</session>

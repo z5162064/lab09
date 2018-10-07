@@ -1,0 +1,15 @@
+package dungeon_game;
+
+public class Pit extends Terrain {
+	private boolean passable;
+	public Boulder() {
+		this.passable = false;
+	}
+	@Override
+	public boolean isPassable() {
+		return passable;
+	}
+	public String move() {
+		return null;
+	}
+}

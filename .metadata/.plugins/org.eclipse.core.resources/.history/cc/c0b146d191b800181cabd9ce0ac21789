@@ -1,0 +1,12 @@
+package dungeon_game;
+
+public class FloorSwitch extends Terrain{
+	private boolean passable;
+	public FloorSwitch() {
+		this.passable = false;
+	}
+	@Override
+	public boolean isPassable() {
+		return passable;
+	}
+}

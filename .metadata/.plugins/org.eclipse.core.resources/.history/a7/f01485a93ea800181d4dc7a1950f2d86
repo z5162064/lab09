@@ -1,0 +1,15 @@
+package refactoring.solution5;
+
+public class Classic extends Movie {
+
+	public Classic(String title, GetChargeStrategy t) {
+		super(title, t);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	int getFrequentRenterPoints(int _daysRented) {
+		return 1;
+	}
+	
+}

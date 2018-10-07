@@ -1,0 +1,48 @@
+/*
+ * @Author Aarthi
+ */
+package lab02.domain;
+
+import java.util.Scanner;
+
+public class Stock {
+	String stockname;
+	int price;
+	public static Stock[] Sort(Stock[] arr){
+	    for (int i = 0; i < arr.length - 1; i++)
+	    {
+	        int index = i;
+	        for (int j = i + 1; j < arr.length; j++)
+	            if (arr[j].price < arr[index].price) 
+	                index = j;
+	  
+	        Stock smallerNumber = arr[index];  
+	        arr[index] = arr[i];
+	        arr[i] = smallerNumber;
+	    }
+	    return arr;
+	}
+	public static void main(String[] args) {
+		Stock[] shares = new Stock[3];
+		System.out.println("Enter the shares as: example - AMP 49.00 BHP 54.89 TELSTRA 4.08");
+		Scanner scan = new Scanner(System.in);
+		shares[0].price = scan.nextInt();
+		shares[0].stockname = scan.next();
+		shares[1].price = scan.nextInt();
+		shares[1].stockname = scan.next();		
+		shares[2].price = scan.nextInt();
+		shares[2].stockname = scan.next();
+		Stock[] sorted = new Stock[3];
+		sorted = Sort(shares);
+		// Add your code here
+		
+		scan.close();
+		for (int j=0; j<3; j++) {
+			// Add your code to print shares sorted by share price
+			System.out.println("Share :" + sorted[0] 
+		}	
+		
+	}
+	
+
+}

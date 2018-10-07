@@ -1,0 +1,15 @@
+package refactoring.solution5;
+
+public class ChildrensGetChargeStrategy implements GetChargeStrategy {
+	public double GetCharge(int number_of_days) {
+		double thisAmount = 1.5;
+		if (number_of_days > 3)
+			thisAmount += (number_of_days - 3) * 1.5;
+		return thisAmount;
+	}
+	@Override
+	public int getFrequentRenterPoints(int number_of_days)  {
+			return 1;
+			
+	}
+}

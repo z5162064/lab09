@@ -1,0 +1,11 @@
+package refactoring.solution5;
+
+public class RegularGetChargeStrategy implements GetChargeStrategy {
+	public double GetCharge(int number_of_days) {
+		double thisAmount = 2;
+		if (number_of_days > 2)
+			thisAmount += (number_of_days - 2) * 1.5;
+		return thisAmount;
+	}
+	
+}

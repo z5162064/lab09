@@ -1,0 +1,16 @@
+package refactoring.solution5;
+
+public class FourMovieDecorator extends DiscountDecorator {
+
+	
+	public FourMovieDecorator(Discounts d, RentalBasket rbask) {
+		super(d, rbask);
+	}
+	
+	@Override
+	public double applyDiscount() {
+		super.applyDiscount();
+		
+	}
+
+}

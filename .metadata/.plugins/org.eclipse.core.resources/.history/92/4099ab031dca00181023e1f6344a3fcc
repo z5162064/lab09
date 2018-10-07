@@ -1,0 +1,16 @@
+package refactoring.solution5;
+
+public class FourMovieDecorator extends DiscountDecorator {
+
+	private RentalBundles rental;
+	
+	public FourMovieDecorator(Discounts d) {
+		super(d);
+	}
+	
+	@Override
+	public double applyDiscount() {
+		return rental.getCharge()*0.9;
+	}
+
+}

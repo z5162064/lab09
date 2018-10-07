@@ -1,0 +1,5 @@
+package refactoring.solution5;
+
+public interface GetChargeStrategy {
+	public double GetCharge(int number_of_days); 
+}

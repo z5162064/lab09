@@ -1,0 +1,12 @@
+package dungeon_game;
+
+public class Exit extends Terrain {
+	private boolean passable;
+	public Boulder() {
+		this.passable = false;
+	}
+	@Override
+	public boolean isPassable() {
+		return passable;
+	}
+}

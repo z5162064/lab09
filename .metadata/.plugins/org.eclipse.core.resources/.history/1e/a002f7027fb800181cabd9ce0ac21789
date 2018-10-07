@@ -1,0 +1,6 @@
+package dungeon_game;
+
+public class Boulder extends Terrain{
+	private boolean passable;
+
+}

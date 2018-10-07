@@ -1,0 +1,8 @@
+package refactoring.solution5;
+
+public class BasicDiscount implements Discounts {
+	@Override
+	public void assemble() {
+		System.out.print("Basic Car.");
+	}
+}

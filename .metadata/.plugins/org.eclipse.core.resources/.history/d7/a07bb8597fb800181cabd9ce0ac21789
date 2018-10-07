@@ -1,0 +1,16 @@
+package dungeon_game;
+
+public class Boulder extends Terrain{
+	private boolean passable;//Assume the boulder is not passable, but it moves within the limits of the dungeon
+	public Boulder() {
+		this.passable = false;
+	}
+	
+	public boolean isPassable() {
+		return passable;
+	}
+	public String move() {
+		
+	}
+
+}

@@ -1,0 +1,74 @@
+package lab03.domain;
+import java.util.ArrayList;
+import java.lang.Object;
+
+/**
+ * Created 3/8/18.
+ */
+public class EntrolmentSystem {
+
+    private ArrayList<Course> courses;
+    private ArrayList<Student> students;
+    private ArrayList<Enrolment> enrolments;
+
+	public EntrolmentSystem() {
+        courses = new ArrayList<Course>();
+        students = new ArrayList<Student>();
+        enrolments = new ArrayList<Enrolment>();
+    }
+
+    public void addCourse(Course c) {
+        courses.add(c);
+    }
+
+    public void addStudent(Student s) {
+        students.add(s);
+    }
+
+    public String displayCourses() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Courses are:\n");
+        for (Course course : courses) {
+            sb.append(course.toString()).append("\n");
+        }
+        String result = new String(sb);
+        System.out.println(result);
+        return result;
+    }
+
+    public void displayCourseOfferings(String year, String term) {
+        ArrayList<CourseOffering> offerings = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
+        StringBuilder temp = new StringBuilder();
+        sb.append("CourseOfferings are:\n");
+        for (Course course: this.courses) {
+        	sb = course.displayCO(year, term, sb);
+        }
+        String total = new String(sb);
+        System.out.println(total);
+        
+    }
+
+    public ArrayList<CourseOffering> listCourseOfferings(String year, String term) {
+        ArrayList<CourseOffering> offerings = new ArrayList<>();
+        ArrayList<CourseOffering> total = new ArrayList<>();
+        for (Course course : courses) {
+        	offerings = course.searchCO(year, term);
+        	total.addAll(offerings);
+        }
+        return total;
+    }
+
+    public Enrolment enrolStudent(Student student, CourseOffering co) {
+    	Enrolment enrol = new Enrolment(co);
+    	Course course = co.getCourse();
+    	if (course.hasPrereq(student)) {
+        	student.addEnrolment(enrol);
+        	this.addStudent(student);
+        	enrolments.add(enrol);
+        	System.out.println("Successful enrolment to" + co);
+    	}
+    	return enrol;
+    }
+    
+}

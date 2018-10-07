@@ -1,0 +1,16 @@
+package dungeon_game;
+
+public class Boulder extends Terrain{
+	private boolean passable;//Assume the boulder is passable, but if it is touching another impassable entity, it is blocked in that direction
+	public Boulder() {
+		this.passable = false;
+	}
+	
+	public boolean isPassable() {
+		return passable;
+	}
+	public String move() {
+		return null;
+	}
+
+}

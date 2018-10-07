@@ -1,0 +1,76 @@
+package Test;
+import dungeon_game.*;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.Assert;
+import org.junit.jupiter.api.Test;
+
+class WinConditionTest {
+	Map m = new Map(20);
+	@Test
+	void testSwitchesAndTreasure() {
+		m.setWinConditions(false, true, true);
+		PlayerCharacter player = new PlayerCharacter();
+		m.get_maptile(5,4).addEntity(player);
+		Boulder boulder = new Boulder(m.get_maptile(5, 5));
+		m.get_maptile(5, 5).addEntity(boulder);
+		FloorSwitch floorswitch = new FloorSwitch(m.get_maptile(5, 6));		
+		m.get_maptile(5, 6).addEntity(floorswitch);
+		Treasure treasure = new Treasure(100);
+		m.get_maptile(6, 5).addEntity(treasure);
+		m.printOnTerminal();
+		m.MoveEntity(player, player.get_MapTile(), "right");
+		m.printOnTerminal();
+		m.MoveEntity(player, player.get_MapTile(), "down");
+		m.printOnTerminal();
+		Assert.assertTrue(m.checkWinConditions());
+		Assert.assertTrue(m.checkSwitches());
+		Assert.assertTrue(m.checkTreasure());
+	}
+	void testDidNotFinishOneCondition() {
+		m.setWinConditions(false, true, true);
+		PlayerCharacter player = new PlayerCharacter();
+		m.get_maptile(5,4).addEntity(player);
+		Boulder boulder = new Boulder(m.get_maptile(5, 5));
+		m.get_maptile(5, 5).addEntity(boulder);
+		FloorSwitch floorswitch = new FloorSwitch(m.get_maptile(5, 6));		
+		m.get_maptile(5, 6).addEntity(floorswitch);
+		Treasure treasure1 = new Treasure(100);
+		Treasure treasure2 = new Treasure(100);
+		m.get_maptile(6, 5).addEntity(treasure1);
+		m.get_maptile(7, 5).addEntity(treasure2);//We are only going to collect one and it should not win
+		m.MoveEntity(player, player.get_MapTile(), "right");
+		m.MoveEntity(player, player.get_MapTile(), "down");
+		Assert.assertFalse(m.checkWinConditions());
+		Assert.assertTrue(m.checkSwitches());
+		Assert.assertFalse(m.checkTreasure());
+	}
+	void testAllConditions() {
+		m.setWinConditions(true, true, true);
+		Sword sword = new Sword();
+		PlayerCharacter p = new PlayerCharacter();
+		Enemy e = new TheHunter();
+		m.get_maptile(5, 3).addEntity(p);
+		m.get_maptile(5, 4).addEntity(e);
+		Boulder boulder = new Boulder(m.get_maptile(5, 5));
+		m.get_maptile(5, 5).addEntity(boulder);
+		FloorSwitch floorswitch = new FloorSwitch(m.get_maptile(5, 6));		
+		m.get_maptile(5, 6).addEntity(floorswitch);
+		Treasure treasure1 = new Treasure(100);
+		Treasure treasure2 = new Treasure(100);
+		m.get_maptile(6, 5).addEntity(treasure1);
+		m.get_maptile(7, 5).addEntity(treasure2);//We are only going to collect one and it should not win
+		p.add_item(sword);
+		p.putInhand(sword);
+		p.use_item();
+		m.MoveEntity(p, p.get_MapTile(), "right");
+		m.MoveEntity(p, p.get_MapTile(), "right");
+		m.MoveEntity(p, p.get_MapTile(), "down");
+		m.MoveEntity(p, p.get_MapTile(), "down");
+		Assert.assertTrue(m.checkWinConditions());
+		Assert.assertTrue(m.checkSwitches());
+		Assert.assertTrue(m.checkTreasure()());
+	}
+
+}

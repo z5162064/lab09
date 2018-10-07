@@ -1,0 +1,11 @@
+package refactoring.solution5;
+
+public class DiscountDecorator implements Discounts {
+	protected Discounts disc; 
+	public DiscountDecorator(Discounts disc)
+	@Override
+	public double applyDiscount() {
+		this.Discounts.applyDiscount();
+	}
+	
+}

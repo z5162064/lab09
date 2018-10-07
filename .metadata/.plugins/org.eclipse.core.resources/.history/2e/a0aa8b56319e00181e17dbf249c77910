@@ -1,0 +1,53 @@
+package lab03.domain;
+import java.util.ArrayList;
+
+/**
+ * Created 3/8/18.
+ */
+public class Student {
+
+    private String zid;
+    private ArrayList<Enrolment> enrolments;
+
+	public Student(String zid) {
+        this.zid = zid;
+        enrolments = new ArrayList<>();
+    }
+
+	/**
+	 * Add an enrolment.
+	 * @param e
+	 */
+	public void addEnrolment(Enrolment e) {
+		this.enrolments.add(e);
+	}
+
+	/**
+	 * @return the zid
+	 */
+	public String getZid() {
+		return zid;
+	}
+	
+	/**
+	 * checks if a course is in the enrolment
+	 */
+	public boolean checkEnrolments(Course course) {
+		boolean flag = false;
+        for (Enrolment enrolment: enrolments) {
+        	if (enrolment.getCourse().equals(course)) {
+        		System.out.println("Already enrolled in" + enrolment.getCourse() + " looking to enrol in:" + course); 
+        		flag = true;
+        		break;
+        	}
+        }
+        return flag;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "zid='" + zid + '\'' +
+                '}';
+    }
+}

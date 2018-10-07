@@ -1,0 +1,14 @@
+package refactoring.solution5;
+
+public class TestMain {
+
+	public static void main(String[] args) {
+		Customer ben = new Customer("Ben");
+		Movie hr = new Movie("Harry Potter", new  ChildrensGetChargeStrategy());
+		Rental childrenR = new Rental(childrenM, 5);
+		ben.addRental(childrenR);
+		System.out.println(ben.statement());
+		childrenM.setStrategy(new ClassicGetChargeStrategy());
+		System.out.println(ben.statement());
+	}
+}

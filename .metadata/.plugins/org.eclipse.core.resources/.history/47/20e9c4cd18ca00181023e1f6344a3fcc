@@ -1,0 +1,14 @@
+package refactoring.solution5;
+
+public class RegularGetChargeStrategy implements GetChargeStrategy {
+	public double GetCharge(int number_of_days) {
+		double thisAmount = 3;
+		if (number_of_days > 2)
+			thisAmount += (number_of_days - 3) * 5;
+		return thisAmount;
+	}
+	@Override
+	public int getFrequentRenterPoints(int number_of_days)  {
+		return 1;	
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;refactoring.solution5.OtherMovie.java&apos; to &apos;Classic.java&apos;&#x0A;- Original project: &apos;lab0405-refactoring_z5162064-master&apos;&#x0A;- Original element: &apos;refactoring.solution5.OtherMovie.java&apos;&#x0A;- Renamed element: &apos;refactoring.solution5.Classic.java&apos;" description="Rename compilation unit &apos;OtherMovie.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;refactoring.solution5{OtherMovie.java" name="Classic.java" references="false" stamp="1535184544804" version="1.0"/>
+</session>

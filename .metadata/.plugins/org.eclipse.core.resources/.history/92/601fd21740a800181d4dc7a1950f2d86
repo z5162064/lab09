@@ -1,0 +1,33 @@
+package refactoring.solution5;
+/*
+ * Moving the getCharge method to the class Movie,
+ * Encapsulate Field on the type code to ensure that all uses of the type code go through getting
+ * and setting methods. Because most of the code came from other classes, most methods already
+ * use the getting method. However, the constructors do access the price code 
+ */
+public abstract class Movie {
+
+	private String title;
+	private GetChargeStrategy strategy;
+	
+	public Movie(String title, GetChargeStrategy t) {
+		this.title = title;
+		this.strategy = t;
+	}
+	public void setStrategy(GetChargeStrategy strategy) {
+	  this.strategy = strategy;
+	}
+	
+
+	public String getTitle (){
+		return title;
+	}
+
+	// Refactor method - refactor getCharge() to class Movie
+	double getCharge(int _daysRented) {
+		return strategy.GetCharge(_daysRented);
+	}
+	
+	
+	abstract int getFrequentRenterPoints(int _daysRented);
+}

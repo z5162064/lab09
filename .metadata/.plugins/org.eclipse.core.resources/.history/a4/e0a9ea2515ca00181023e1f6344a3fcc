@@ -1,0 +1,11 @@
+package application;
+
+import javafx.stage.Stage;
+
+public class DisplayController {
+
+	public DisplayController(Stage s) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

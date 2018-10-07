@@ -1,0 +1,127 @@
+package week07.lab;
+import java.util.*;
+
+/**
+ * An implementation of a set using an ArrayList
+ * @author bradfordh
+ *
+ * @param <E> uses a generic type so any object can be declared of this type
+ */
+
+public class ArrayListSet<E> implements Set<E> {
+	
+	
+	/**
+	 * Default constructor builds an empty set
+	 */
+	
+	private ArrayList<E> list;	
+	public ArrayList<E> getList() {
+		return list;
+	}
+
+	public void setList(ArrayList<E> list) {
+		this.list = list;
+	}
+
+	public ArrayListSet() {
+		list = new ArrayList<E>();
+	}
+
+	/**
+	 * Copy constructor, makes a copy of the inputed set.
+	 * @param arrayListSet
+	 */
+	public ArrayListSet(ArrayListSet<E> arrayListSet) {
+		list = new ArrayList<E>(arrayListSet.getList());
+	}
+
+
+	@Override
+	public void add(E e) {
+		if (!list.contains(e)) {
+			list.add(e);
+		}
+	}
+
+	@Override
+	public void remove(E e) {
+		for (int i = 0; i< list.size(); i++ ) {
+			if (list.get(i).equals(e)) {
+				list.remove(i);
+			}
+		}
+	}
+
+	@Override
+	public Set<E> union(Set<E> secondSet) {// we can just add all of them as they are should be checked to be unique
+		Set<E> set = (Set<E>) new HashSet<E>();
+		for (E e : secondSet) {
+			set.add(e);
+		}
+		for (E e : list) {
+			set.add(e);
+		}
+		return set;
+	}
+
+		
+	@Override
+	public Set<E> intersection(Set<E> secondSet) {
+		Set<E> set = (Set<E>) new HashSet<E>();
+		for (E e : secondSet) {
+			if (list.contains(e)) {
+				set.add(e);
+			}
+		}
+		return set;
+	}
+
+	@Override
+	public boolean contains(Object e) {
+		return list.contains(e);
+	}
+
+	@Override
+	public Iterator<E> iterator() {
+		Iterator<E> it = new Iterator<E>() {
+			private int currentindex = 0;
+			@Override
+			public boolean hasNext() {
+				 return currentindex < list.size() && list.get(currentindex) != null;
+			}
+
+			@Override
+			public E next() {
+				return list.get(currentindex++);
+			}
+		};
+		return it;
+		
+	}
+	
+	@Override
+	public String toString() {
+		return null;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		return false;
+	}
+
+	
+	@Override
+	public boolean subset(Set<E> secondSet)
+	{
+		for (E e : this)					// can do this since Set<E> implements Iterable<E>!!
+			if (!secondSet.contains(e))
+				return false;
+		return true;
+	}
+		
+	@Override
+	public int size() {
+		return list.size();
+	}
+}

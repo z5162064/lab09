@@ -1,0 +1,10 @@
+package refactoring.solution5;
+
+public class TestMain {
+
+	public static void main(String[] args) {
+		Customer ben = new Customer("Ben");
+		Movie childrenM = new Movie("Harry Potter", new  ChildrensGetChargeStrategy());
+		Rental childrenR = new Rental(childrenM, 5);
+	}
+}

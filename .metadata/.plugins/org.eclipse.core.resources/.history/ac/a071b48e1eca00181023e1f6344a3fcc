@@ -1,0 +1,16 @@
+package refactoring.solution5;
+
+public class DiscountDecorator implements Discounts {
+	protected Discounts disc; 
+	protected RentalBasket rbask;
+	public DiscountDecorator(Discounts d, RentalBask r) {
+		this.disc = d;
+		this.rbask = r;
+		
+	}
+	@Override
+	public double applyDiscount() {
+		return this.disc.applyDiscount();
+	}
+	
+}

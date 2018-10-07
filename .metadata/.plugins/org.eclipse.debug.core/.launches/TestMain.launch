@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/lab0405-refactoring_z5162064-master/src/refactoring/solution5/TestMain.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="refactoring.solution5.TestMain"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="lab0405-refactoring_z5162064-master"/>
+</launchConfiguration>

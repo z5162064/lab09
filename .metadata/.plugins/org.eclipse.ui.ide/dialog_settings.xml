@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/import/ravel/2/z5162064/workspace"/>
+		<item value="/import/ravel/2/z5162064/cs2511/cs2511-lab03/lab03-enrolment_z5162064/src"/>
+		<item value="/tmp_amd/ravel/export/ravel/2/z5162064/cs2511/cs2511-lab03/lab03-enrolment_z5162064/src"/>
+	</list>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.jdt.ui.java"/>
+		</list>
+	</section>
+</section>

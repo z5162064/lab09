@@ -1,0 +1,17 @@
+package Test;
+import dungeon_game.*;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.Assert;
+import org.junit.jupiter.api.Test;
+
+class WinConditionTest {
+	Map m = new Map(20);
+	@Test
+	void testBouldersAndSwitches() {
+		PlayerCharacter player = new PlayerCharacter();
+		m.get_maptile(5,6).addEntity(player);
+	}
+
+}

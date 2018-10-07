@@ -1,0 +1,14 @@
+package refactoring.solution5;
+
+public class NewReleaseGetChargeStrategy implements GetChargeStrategy {
+	public double GetCharge(int number_of_days) {
+		double thisAmount = number_of_days * 3;
+		return thisAmount;
+	}
+}
+public class getFrequentRenterPoints implements GetChargeStrategy {
+	public double GetCharge(int number_of_days) {
+		double thisAmount = number_of_days * 3;
+		return thisAmount;
+	}
+}

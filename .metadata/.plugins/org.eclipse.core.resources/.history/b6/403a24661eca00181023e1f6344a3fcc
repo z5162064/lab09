@@ -1,0 +1,15 @@
+package refactoring.solution5;
+
+public class DiscountDecorator implements Discounts {
+	protected Discounts disc; 
+	protected RentalBundles rbund;
+	public DiscountDecorator(Discounts d, RentalBundles r) {
+		this.disc = d;
+		
+	}
+	@Override
+	public double applyDiscount() {
+		return this.disc.applyDiscount();
+	}
+	
+}

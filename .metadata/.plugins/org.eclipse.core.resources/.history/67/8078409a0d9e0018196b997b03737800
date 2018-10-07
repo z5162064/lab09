@@ -1,0 +1,67 @@
+package lab03.domain;
+import java.util.ArrayList;
+
+/**
+ * Maintains all the courses offered in the university
+ * Created 4/8/2018
+ */
+public class Course {
+
+    private String courseCode;
+    private ArrayList<Course> prereqs;
+    private ArrayList<CourseOffering> courseofferings;
+    // Complete the implementation of this class - to add the missing fields and methods
+    // The implementation of this class must conform to your class diagram
+
+    public Course(String courseCode) {
+        this.courseCode = courseCode;
+        this.prereqs = new ArrayList<Course>();
+        this.courseofferings = new ArrayList<CourseOffering>();
+    }
+    public void displayCO(String year, String term, StringBuilder sb) {
+    	for (CourseOffering courseoffering : courseofferings) {
+    		if (courseoffering.hasOffering(year, term)) {
+    			sb.append(courseoffering.toString()).append("\n");
+    		}
+    	}
+    }
+    
+    public ArrayList<CourseOffering> searchCO(String year, String term) {
+    	ArrayList<CourseOffering> search = new ArrayList<>();
+    	for (CourseOffering courseoffering : courseofferings) {
+    		if (courseoffering.hasOffering(year, term)) {
+    			search.add(courseoffering);
+    		}
+    	}
+    	return search;
+    }
+    public void addCO(CourseOffering courseoffering) {
+    	courseofferings.add(courseoffering);
+    }
+    public void removeCO(CourseOffering courseoffering) {
+        courseofferings.remove(courseoffering);
+    } 
+    public void addPrereq(Course course) {
+        prereqs.add(course);
+    }
+    
+    public void removePrereq(Course course) {
+        prereqs.remove(course);
+    } 
+    
+    public boolean hasPrereq(Course course) {
+    	for (Course prereq : prereqs) {
+    		
+    	}
+    }
+
+    @Override
+    public String toString() {
+        return courseCode;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+}
